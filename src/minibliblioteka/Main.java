@@ -26,6 +26,7 @@ public class Main {
         b1.addBook(ks3);
         //b1.printAvailableBooks();
         b1.findBookByTitle("Wariacje");
+        b1.countAvailableBooks();
 
 
     }

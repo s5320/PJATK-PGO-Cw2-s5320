@@ -31,4 +31,7 @@ public class Biblioteka {
             }
         }
     }
+    public void countAvailableBooks(){
+            System.out.println("Liczba dostępnych książek - " + this.liczbaKsiazek);
+    }
 }
