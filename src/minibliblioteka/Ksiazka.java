@@ -5,6 +5,15 @@ public class Ksiazka {
     private String tytul;
     private int liczbaStron;
     private boolean dostepna;
+    private int iloscWypozyczen;
+
+    private int getIloscWypozyczen() {
+        return iloscWypozyczen;
+    }
+
+    private void setIloscWypozyczen(int iloscWypozyczen) {
+        this.iloscWypozyczen = iloscWypozyczen;
+    }
 
     public String getAutor() {
         return autor;
@@ -63,6 +72,7 @@ public class Ksiazka {
         } else System.out.println("Książka niedostępna");
 
         setDostepna(false);
+        this.iloscWypozyczen++; //Dodatkowe
     }
     void returnBook(){
         if (isDostepna()){

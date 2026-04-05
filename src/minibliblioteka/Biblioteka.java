@@ -66,4 +66,13 @@ public class Biblioteka {
             System.out.println("Książka jest na stanie nie może zostać zwrócona");
         }
     }
+    //Opcjonalne rozszerzenia
+    Ksiazka findBookByAuthor(String author) {
+        for (int i = 0; i < this.liczbaKsiazek; i++) {
+            if (this.ksiazki[i].getAutor().equals(author)) {
+                return this.ksiazki[i];
+            }
+        }
+        return null;
+    }
 }
