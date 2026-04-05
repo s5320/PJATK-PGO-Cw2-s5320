@@ -1,2 +1,2 @@
 PGO CW2
-Prosta biblioteka
+Mini Biblioteka
