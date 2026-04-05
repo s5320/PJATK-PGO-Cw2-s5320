@@ -1,10 +1,14 @@
 package minibliblioteka;
 
+import java.util.ArrayList;
+
 public class Czytelnik {
     private String imie;
     private String nazwisko;
     private int nrKarty;
     private int liczbaWypozyczen;
+    private ArrayList<Ksiazka> ksiazki = new ArrayList<>();
+
 
     public String getImie() {
         return imie;
@@ -56,7 +60,7 @@ public class Czytelnik {
     }
     void incBookRental(){
         this.liczbaWypozyczen++;
-        System.out.println("Liczba wypożyczeń zwięszona = " + this.liczbaWypozyczen);
+        //System.out.println("Liczba wypożyczeń zwięszona = " + this.liczbaWypozyczen);
     }
     void decBookRental() {
         this.liczbaWypozyczen--;
@@ -65,4 +69,11 @@ public class Czytelnik {
         }
         System.out.println("Liczba wypożyczeń zmniejszona = " + this.liczbaWypozyczen);
     }
+    void addBook(Ksiazka ksiazka){
+        ksiazki.add(ksiazka);
+    }
+    void removeBook(Ksiazka ksiazka){
+        ksiazki.remove(ksiazka);
+    }
+
 }

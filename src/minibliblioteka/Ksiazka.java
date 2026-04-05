@@ -58,7 +58,7 @@ public class Ksiazka {
     }
     void borrowBook(){
         if (isDostepna()){
-            System.out.println("Wypozyczam książkę:");
+            System.out.println("Wypozyczam książkę: " + this.tytul);
             getInfo();
         } else System.out.println("Książka niedostępna");
 

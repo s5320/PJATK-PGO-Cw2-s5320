@@ -10,23 +10,19 @@ public class Main {
         Czytelnik cz2 = new Czytelnik("John", "Doe",101);
         Biblioteka b1 = new Biblioteka(3);
         // błędny czytelnik Czytelnik cz1 = new Czytelnik("Filip", "Sk",0);
-        //ks1.borrowBook();
-        //ks1.borrowBook();
-        //ks1.returnBook();
-        //ks1.borrowBook();
-        //cz1.printData();
-        //cz1.incBookRental();
-        //cz2.printData();
-        //cz2.incBookRental();
-        //cz1.printData();
-        //cz2.printData();
-        //cz1.decBookRental();
         b1.addBook(ks1);
         b1.addBook(ks2);
         b1.addBook(ks3);
-        //b1.printAvailableBooks();
-        b1.findBookByTitle("Wariacje");
+        b1.printAvailableBooks();
         b1.countAvailableBooks();
+        b1.borrowBook("Wariacje",cz1);
+        b1.printAvailableBooks();
+        b1.countAvailableBooks();
+        b1.borrowBook("Wariacje",cz1);
+        b1.returnBook("Wariacje",cz1);
+        b1.countAvailableBooks();
+        b1.printAvailableBooks();
+
 
 
     }

@@ -8,8 +8,7 @@ public class Biblioteka {
         this.ksiazki = new Ksiazka[pojemnosc];
     }
 
-    public void addBook(Ksiazka ksiazka) {
-        // logika dodawania do tablicy
+    void addBook(Ksiazka ksiazka) {
         if (ksiazka == null) {
             throw new IllegalArgumentException("Książka nie może być niczym");
         }
@@ -18,20 +17,53 @@ public class Biblioteka {
         }
         this.ksiazki[this.liczbaKsiazek++] = ksiazka;
     }
-    public void printAvailableBooks(){
+    void printAvailableBooks(){
         for (int i = 0; i < this.liczbaKsiazek; i++) {
-            System.out.println("############################");
-            this.ksiazki[i].getInfo();
-        }
-    }
-    public void findBookByTitle(String title){
-        for (int i = 0; i < this.liczbaKsiazek; i++) {
-            if(this.ksiazki[i].getTytul().equals(title)){
+            if(this.ksiazki[i].isDostepna()==true) {
+                System.out.println("############################");
                 this.ksiazki[i].getInfo();
             }
         }
+        System.out.println("############################");
     }
-    public void countAvailableBooks(){
-            System.out.println("Liczba dostępnych książek - " + this.liczbaKsiazek);
+    Ksiazka findBookByTitle(String title) {
+        for (int i = 0; i < this.liczbaKsiazek; i++) {
+            if (this.ksiazki[i].getTytul().equals(title)) {
+                return this.ksiazki[i];
+            }
+        }
+        return null;
+    }
+    void countAvailableBooks() {
+        int j=0;
+        for (int i = 0; i < this.liczbaKsiazek; i++) {
+            if (this.ksiazki[i].isDostepna() == true) {
+                j++;
+            }
+        }
+        System.out.println("Liczba dostępnych książek - " + j);
+    }
+    void borrowBook(String title, Czytelnik czytelnik){
+        Ksiazka ksiazka = findBookByTitle(title);
+                if (ksiazka.isDostepna()==true) {
+                    czytelnik.addBook(ksiazka);
+                    czytelnik.incBookRental();
+                    ksiazka.borrowBook();
+                    System.out.println("Książka wypożyczona przez " + czytelnik.getImie() + " " + czytelnik.getNazwisko());
+                }else {
+                    System.out.println("Książka niedostępna - przykro mi");
+                }
+            }
+
+    void returnBook(String title, Czytelnik czytelnik){
+        Ksiazka ksiazka = findBookByTitle(title);
+        if (ksiazka.isDostepna()==false) {
+            czytelnik.removeBook(ksiazka);
+            czytelnik.decBookRental();
+            ksiazka.returnBook();
+            System.out.println("Książka zostałą zwrócona przez " + czytelnik.getImie() + " " + czytelnik.getNazwisko());
+        }else {
+            System.out.println("Książka jest na stanie nie może zostać zwrócona");
+        }
     }
 }
