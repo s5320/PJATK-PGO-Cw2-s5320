@@ -46,7 +46,6 @@ public class Ksiazka {
             throw new IllegalArgumentException("Tytuł nie może być pusty");
         }else this.tytul = tytul;
         if (liczbaStron <= 0) {
-            System.out.println();
             throw new IllegalArgumentException("Książka musi zawierać strony");
         }else this.liczbaStron = liczbaStron;
         this.dostepna = dostepna;
