@@ -1,7 +1,5 @@
 package minibliblioteka;
 
-import java.util.ArrayList;
-
 public class Czytelnik {
     private String imie;
     private String nazwisko;
@@ -50,12 +48,21 @@ public class Czytelnik {
         if (nrKarty <= 0){
             throw new IllegalArgumentException("Numer karty musi być większy od 0");
         } else this.nrKarty = nrKarty;
-        if (liczbaWypozyczen < 0){
-            throw new IllegalArgumentException("Liczba wypożyczeń nie może być mniejsza od 0")
-        } this.liczbaWypozyczen = 0;
+        liczbaWypozyczen = 0;
     }
     void printData(){
         System.out.println("Imie: " + this.imie + " Nazwisko: " + this.nazwisko +
-                " Numer Karty: " + this.nrKarty + " Liczba wypożyczeń" + this.liczbaWypozyczen);
+                " Numer Karty: " + this.nrKarty + " Liczba wypożyczeń - " + this.liczbaWypozyczen);
+    }
+    void incBookRental(){
+        this.liczbaWypozyczen++;
+        System.out.println("Liczba wypożyczeń zwięszona = " + this.liczbaWypozyczen);
+    }
+    void decBookRental() {
+        this.liczbaWypozyczen--;
+        if (this.liczbaWypozyczen < 0) {
+            throw new IllegalStateException("Liczba wypożyczeń nie może być mniejsza od zera");
+        }
+        System.out.println("Liczba wypożyczeń zmniejszona = " + this.liczbaWypozyczen);
     }
 }
