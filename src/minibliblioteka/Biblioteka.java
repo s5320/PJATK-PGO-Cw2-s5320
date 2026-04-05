@@ -24,4 +24,11 @@ public class Biblioteka {
             this.ksiazki[i].getInfo();
         }
     }
+    public void findBookByTitle(String title){
+        for (int i = 0; i < this.liczbaKsiazek; i++) {
+            if(this.ksiazki[i].getTytul().equals(title)){
+                this.ksiazki[i].getInfo();
+            }
+        }
+    }
 }
