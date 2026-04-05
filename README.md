@@ -1,6 +1,6 @@
 # Mini Biblioteka
 
-Projekt zaliczeniowy z przedmiotu **PGO (Programowanie Generyczne i Obiektowe)**  
+Projekt zaliczeniowy z przedmiotu **PGO  
 PJATK — Ćwiczenia 2
 
 ---
