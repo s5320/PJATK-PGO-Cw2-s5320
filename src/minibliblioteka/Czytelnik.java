@@ -41,10 +41,18 @@ public class Czytelnik {
     }
 
     public Czytelnik(String imie, String nazwisko, int nrKarty) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-        this.nrKarty = nrKarty;
-        liczbaWypozyczen = 0;
+        if (imie.isEmpty()){
+            throw new IllegalArgumentException("Imię nie może być puste");
+        }else this.imie = imie;
+        if (nazwisko.isEmpty()){
+            throw new IllegalArgumentException("Nazwisko nie może być puste");
+        }else this.nazwisko = nazwisko;
+        if (nrKarty <= 0){
+            throw new IllegalArgumentException("Numer karty musi być większy od 0");
+        } else this.nrKarty = nrKarty;
+        if (liczbaWypozyczen < 0){
+            throw new IllegalArgumentException("Liczba wypożyczeń nie może być mniejsza od 0")
+        } this.liczbaWypozyczen = 0;
     }
     void printData(){
         System.out.println("Imie: " + this.imie + " Nazwisko: " + this.nazwisko +
