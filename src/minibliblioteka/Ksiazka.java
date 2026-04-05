@@ -1,4 +1,4 @@
-package pl.s5320.cw2.biblioteka;
+package minibliblioteka;
 
 public class Ksiazka {
     private String autor;
