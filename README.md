@@ -68,8 +68,21 @@ Wymagania: Java 17+
 javac src/minibliblioteka/*.java
 java -cp src minibliblioteka.Main
 ```
+## Raport końcowy
+
+Projekt zrealizowany w ramach ćwiczeń z przedmiotu PGO.
+
+Zaimplementowane funkcjonalności:
+- dodawanie książek do biblioteki
+- wypożyczanie i zwracanie książek
+- wyszukiwanie książek po tytule i autorze
+- walidacja danych wejściowych
+- unikalny identyfikator czytelnika
 
 ---
+Features
+- wyszukiwanie książki po autorze
+- licznik wypożyczeń każdej książki
 
 ## Autor
 
